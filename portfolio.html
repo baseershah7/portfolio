@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseer Hassan Shah - Data Scientist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #2c3e50;
+            --text-light: #7f8c8d;
+            --background: #ffffff;
+            --section-bg: #f8f9fa;
+            --border-color: #e9ecef;
+            --shadow: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-hover: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--background);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--background);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--background);
+            color: var(--text-color);
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            color: var(--accent-color);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--section-bg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .about-text strong {
+            color: var(--accent-color);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--background);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--background);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-badge {
+            background: var(--section-bg);
+            color: var(--text-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--section-bg);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--background);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .project-rank {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-highlights {
+            list-style: none;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .project-highlights li {
+            padding: 0.3rem 0;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .project-highlights li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            padding: 2rem;
+            background: var(--background);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .contact-item p {
+            color: var(--text-light);
+        }
+
+        .contact-item a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>BASEER HASSAN SHAH</h1>
+                <div class="subtitle">Data Scientist</div>
+                <p>Competitive, production-ready Data Scientist with a passion for building intelligent systems that actually work outside notebooks. I specialize in extracting deep insights from complex data, designing robust machine learning pipelines, and delivering solutions that are both impactful and scalable.</p>
+                
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/baseer-hassan" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/baseershah7" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://kaggle.com/baseershah" target="_blank" title="Kaggle">
+                        <i class="fab fa-kaggle"></i>
+                    </a>
+                    <a href="mailto:baseerhassan512@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+               
+                <div class="about-text">
+                    <p>My background combines <strong>consecutive participation in global AI competitions</strong> with hands-on experience building full-stack ML systems — from raw data to deployed inference APIs.</p>
+                    
+                    <p>Whether it's medical imaging, sensor fusion, time series, or structured data, I bring <strong>engineering precision and creative problem-solving</strong> with a meticulous & stringent approach to the table.</p>
+                    
+                    <p>I have delivered <strong>production-ready solutions</strong> that have been validated through international competitions, with expertise in large-scale predictive modeling and advanced analytics that drive real-world impact.</p>
+                </div>
+        
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Stack</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> Machine Learning & Deep Learning</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">PyTorch</span>
+                        <span class="skill-badge">TensorFlow</span>
+                        <span class="skill-badge">Scikit-Learn</span>
+                        <span class="skill-badge">XGBoost</span>
+                        <span class="skill-badge">LightGBM</span>
+                        <span class="skill-badge">CatBoost</span>
+                        <span class="skill-badge">Scipy</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Data Engineering</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">SQL</span>
+                        <span class="skill-badge">Pandas</span>
+                        <span class="skill-badge">Polars</span>
+                        <span class="skill-badge">NumPy</span>
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">Feature Engineering</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> MLOps & Deployment</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">FastAPI</span>
+                        <span class="skill-badge">Streamlit</span>
+                        <span class="skill-badge">Docker</span>
+                        <span class="skill-badge">MLflow</span>
+                        <span class="skill-badge">Git/GitHub</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-line"></i> Visualization & Analytics</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">Matplotlib</span>
+                        <span class="skill-badge">Seaborn</span>
+                        <span class="skill-badge">Plotly</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects & Competitions</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">EY Urban Heat Island</h3>
+                        <div class="project-rank">Global Semi-Finalist - 3rd out of 2,076</div>
+                        <p class="project-description">EY Global Competition where organizers recognized global semi-finalist status for high-impact urban planning optimization solution.</p>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Engineered scalable feature extraction pipeline processing 1,700+ satellite and environmental data points</li>
+                        <li>Built production-grade ensemble system combining 27 Extra Trees Regressors with meta-learning approach</li>
+                        <li>Delivered validated solution for urban planning optimization</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Mental Health Depression Classification</h3>
+                        <div class="project-rank">Top 35 out of 2,900 (Top 1.2%)</div>
+                        <p class="project-description">Kaggle Playground Series advancing healthcare analytics solutions with innovative ML approaches.</p>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Developed innovative approach treating medium-cardinality numerical features as categorical variables</li>
+                        <li>Optimized CatBoost classifier performance through advanced class imbalance handling techniques</li>
+                        <li>Advanced healthcare analytics solutions with production-ready model</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Kaggle Playground Series</h3>
+                        <div class="project-rank">10+ Competitions Participated</div>
+                        <p class="project-description">Consistent high-performance across multiple Kaggle Playground Series competitions, demonstrating versatility in diverse ML challenges and problem domains.</p>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Developed innovative feature engineering techniques across diverse datasets</li>
+                        <li>Advanced ensemble methods and optimization strategies for competitive ML</li>
+                        <li>Consistent top-tier performance in healthcare, finance, and predictive modeling challenges</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Cross-Camera Person Re-Identification</h3>
+                        <div class="project-rank">Multi-Camera Surveillance System</div>
+                        <p class="project-description">Engineered scalable cross-camera tracking system optimizing operational efficiency through automated identity management.</p>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Developed production-ready pipeline combining YOLOv8, DeepSort, and ResNet50/OSNet</li>
+                        <li>Built temporal feature gallery enabling persistent cross-session re-identification</li>
+                        <li>Multi-threaded processing architecture for real-time performance</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">ISIC Skin Cancer Detection</h3>
+                        <div class="project-rank">Top 28% among 2,740 participants</div>
+                        <p class="project-description">Kaggle Competition developing ensemble model system for malignant lesion identification in medical imaging.</p>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Processed 500k+ medical images for clinical decision support</li>
+                        <li>Engineered robust feature extraction pipeline utilizing deep learning architectures</li>
+                        <li>Demonstrated scalable healthcare analytics solution</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Child Mind Institute</h3>
+                        <div class="project-rank">Mental Health Analysis</div>
+                        <p class="project-description">Large-scale accelerometer time series data analysis for behavioral pattern recognition in healthcare applications.</p>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Processed large-scale accelerometer time series data for behavioral pattern recognition</li>
+                        <li>Developed LightGBM models delivering actionable insights for mental health assessment</li>
+                        <li>Engineered temporal features capturing complex activity patterns and circadian rhythms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Interested in collaboration or have a challenging data science problem? Let's connect and build something impactful together.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:baseerhassan512@gmail.com">baseerhassan512@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Baseer Hassan Shah. Built with passion for data science and clean code.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all major sections
+        document.querySelectorAll('section, .project-card, .skill-category').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                header.style.backgroundColor = 'var(--background)';
+            }
+        });
+    </script>
+</body>
+</html>
