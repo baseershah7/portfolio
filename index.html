@@ -156,21 +156,43 @@
         }
 
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-        }
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            }
 
         .about-text {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-color);
-        }
+                }
+
+        .about-text p {
+            margin-bottom: 1.2rem;
+            }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+                }
 
         .about-text strong {
             color: var(--accent-color);
-        }
+            font-weight: 600;
+            position: relative;
+                }
+
+        .about-text strong:after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(52, 152, 219, 0.2);
+                }
 
         .stats {
             display: grid;
@@ -228,20 +250,15 @@
             gap: 0.5rem;
         }
 
-        .skill-badges {
+        .tech-badges {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
+            margin-top: 1rem;
         }
 
-        .skill-badge {
-            background: var(--section-bg);
-            color: var(--text-color);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid var(--border-color);
+        .tech-badge {
+            height: 24px;
         }
 
         /* Projects Section */
@@ -261,6 +278,7 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
 
         .project-card:hover {
@@ -271,6 +289,7 @@
         .project-header {
             padding: 1.5rem;
             border-bottom: 1px solid var(--border-color);
+            position: relative;
         }
 
         .project-title {
@@ -315,6 +334,14 @@
             left: 0;
             color: var(--accent-color);
             font-weight: bold;
+        }
+
+        .github-link {
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            color: var(--text-color);
+            font-size: 1.2rem;
         }
 
         /* Contact Section */
@@ -440,7 +467,7 @@
             <div class="hero-content fade-in">
                 <h1>BASEER HASSAN SHAH</h1>
                 <div class="subtitle">Data Scientist</div>
-                <p>Competitive, production-ready Data Scientist with a passion for building intelligent systems that actually work outside notebooks. I specialize in extracting deep insights from complex data, designing robust machine learning pipelines, and delivering solutions that are both impactful and scalable.</p>
+                <p>Building systems that last</p>
                 
                 <div class="social-links">
                     <a href="https://linkedin.com/in/baseer-hassan" target="_blank" title="LinkedIn">
@@ -452,29 +479,24 @@
                     <a href="https://kaggle.com/baseershah" target="_blank" title="Kaggle">
                         <i class="fab fa-kaggle"></i>
                     </a>
-                    <a href="mailto:baseerhassan512@gmail.com" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-               
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
                 <div class="about-text">
-                    <p>My background combines <strong>consecutive participation in global AI competitions</strong> with hands-on experience building full-stack ML systems — from raw data to deployed inference APIs.</p>
-                    
-                    <p>Whether it's medical imaging, sensor fusion, time series, or structured data, I bring <strong>engineering precision and creative problem-solving</strong> with a meticulous & stringent approach to the table.</p>
-                    
-                    <p>I have delivered <strong>production-ready solutions</strong> that have been validated through international competitions, with expertise in large-scale predictive modeling and advanced analytics that drive real-world impact.</p>
+                    <p>I'm a competitive, production-ready Data Scientist with a proven track record in global AI competitions, specializing in extracting deep insights from complex data and designing robust machine learning pipelines that deliver scalable, impactful solutions in real-world applications.</p>
+                    <p style="margin: 1.5rem 0;">I refuse to settle for good enough even though I know perfect solutions don't exist in data science. This mindset allows me to experiment with a variety of techniques and continuously grow as a data scientist.</p>
+                    <p>Passionate about satellite imagery with a focus on climate change and healthcare applications.</p>
+                    </div>
                 </div>
-        
-        </div>
-    </section>
+            </div>
+        </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
@@ -483,47 +505,45 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3><i class="fas fa-brain"></i> Machine Learning & Deep Learning</h3>
-                    <div class="skill-badges">
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">PyTorch</span>
-                        <span class="skill-badge">TensorFlow</span>
-                        <span class="skill-badge">Scikit-Learn</span>
-                        <span class="skill-badge">XGBoost</span>
-                        <span class="skill-badge">LightGBM</span>
-                        <span class="skill-badge">CatBoost</span>
-                        <span class="skill-badge">Scipy</span>
+                    <div class="tech-badges">
+                        <img src="https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-PyTorch-EE4C2C?logo=pytorch&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-TensorFlow-FF6F00?logo=tensorflow&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-Scikit--Learn-F7931E?logo=scikit-learn&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-XGBoost-017CEE?logo=xgboost&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-LightGBM-8BC34A?logo=lightgbm&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-CatBoost-FFCC00?logo=catboost&logoColor=black" class="tech-badge">
                     </div>
                 </div>
                 
                 <div class="skill-category">
                     <h3><i class="fas fa-database"></i> Data Engineering</h3>
-                    <div class="skill-badges">
-                        <span class="skill-badge">SQL</span>
-                        <span class="skill-badge">Pandas</span>
-                        <span class="skill-badge">Polars</span>
-                        <span class="skill-badge">NumPy</span>
-                        <span class="skill-badge">MySQL</span>
-                        <span class="skill-badge">Feature Engineering</span>
+                    <div class="tech-badges">
+                        <img src="https://img.shields.io/badge/-SQL-4479A1?logo=postgresql&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-Pandas-150458?logo=pandas&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-Polars-CD7925?logo=polars&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-NumPy-013243?logo=numpy&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-MySQL-005C84?logo=mysql&logoColor=white" class="tech-badge">
                     </div>
                 </div>
                 
                 <div class="skill-category">
                     <h3><i class="fas fa-cloud"></i> MLOps & Deployment</h3>
-                    <div class="skill-badges">
-                        <span class="skill-badge">FastAPI</span>
-                        <span class="skill-badge">Streamlit</span>
-                        <span class="skill-badge">Docker</span>
-                        <span class="skill-badge">MLflow</span>
-                        <span class="skill-badge">Git/GitHub</span>
+                    <div class="tech-badges">
+                        <img src="https://img.shields.io/badge/-FastAPI-009688?logo=fastapi&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-Streamlit-FF4B4B?logo=streamlit&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-MLflow-3A8BBB?logo=mlflow&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white" class="tech-badge">
                     </div>
                 </div>
                 
                 <div class="skill-category">
                     <h3><i class="fas fa-chart-line"></i> Visualization & Analytics</h3>
-                    <div class="skill-badges">
-                        <span class="skill-badge">Matplotlib</span>
-                        <span class="skill-badge">Seaborn</span>
-                        <span class="skill-badge">Plotly</span>
+                    <div class="tech-badges">
+                        <img src="https://img.shields.io/badge/-Matplotlib-11557C?logo=matplotlib&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-Seaborn-3776AB?logo=python&logoColor=white" class="tech-badge">
+                        <img src="https://img.shields.io/badge/-Plotly-3F4F75?logo=plotly&logoColor=white" class="tech-badge">
                     </div>
                 </div>
             </div>
@@ -539,6 +559,9 @@
                     <div class="project-header">
                         <h3 class="project-title">EY Urban Heat Island</h3>
                         <div class="project-rank">Global Semi-Finalist - 3rd out of 2,076</div>
+                        <a href="https://github.com/baseershah7/EY_Urban_Heat_Island" class="github-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
                         <p class="project-description">EY Global Competition where organizers recognized global semi-finalist status for high-impact urban planning optimization solution.</p>
                     </div>
                     <ul class="project-highlights">
@@ -552,6 +575,9 @@
                     <div class="project-header">
                         <h3 class="project-title">Mental Health Depression Classification</h3>
                         <div class="project-rank">Top 35 out of 2,900 (Top 1.2%)</div>
+                        <a href="https://github.com/baseershah7/Kaggle_Playground_Series/tree/main/Exploring%20Mental%20Health%20Data%20-%20Nov%202024" class="github-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
                         <p class="project-description">Kaggle Playground Series advancing healthcare analytics solutions with innovative ML approaches.</p>
                     </div>
                     <ul class="project-highlights">
@@ -564,52 +590,16 @@
                 <div class="project-card">
                     <div class="project-header">
                         <h3 class="project-title">Kaggle Playground Series</h3>
-                        <div class="project-rank">10+ Competitions Participated</div>
-                        <p class="project-description">Consistent high-performance across multiple Kaggle Playground Series competitions, demonstrating versatility in diverse ML challenges and problem domains.</p>
+                        <div class="project-rank">13+ Competitions Participated</div>
+                        <a href="https://github.com/baseershah7/Kaggle_Playground_Series/tree/main" class="github-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <p class="project-description">Consistent high-performance across multiple Kaggle competitions, demonstrating versatility in diverse ML challenges.</p>
                     </div>
                     <ul class="project-highlights">
                         <li>Developed innovative feature engineering techniques across diverse datasets</li>
                         <li>Advanced ensemble methods and optimization strategies for competitive ML</li>
                         <li>Consistent top-tier performance in healthcare, finance, and predictive modeling challenges</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Cross-Camera Person Re-Identification</h3>
-                        <div class="project-rank">Multi-Camera Surveillance System</div>
-                        <p class="project-description">Engineered scalable cross-camera tracking system optimizing operational efficiency through automated identity management.</p>
-                    </div>
-                    <ul class="project-highlights">
-                        <li>Developed production-ready pipeline combining YOLOv8, DeepSort, and ResNet50/OSNet</li>
-                        <li>Built temporal feature gallery enabling persistent cross-session re-identification</li>
-                        <li>Multi-threaded processing architecture for real-time performance</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">ISIC Skin Cancer Detection</h3>
-                        <div class="project-rank">Top 28% among 2,740 participants</div>
-                        <p class="project-description">Kaggle Competition developing ensemble model system for malignant lesion identification in medical imaging.</p>
-                    </div>
-                    <ul class="project-highlights">
-                        <li>Processed 500k+ medical images for clinical decision support</li>
-                        <li>Engineered robust feature extraction pipeline utilizing deep learning architectures</li>
-                        <li>Demonstrated scalable healthcare analytics solution</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Child Mind Institute</h3>
-                        <div class="project-rank">Mental Health Analysis</div>
-                        <p class="project-description">Large-scale accelerometer time series data analysis for behavioral pattern recognition in healthcare applications.</p>
-                    </div>
-                    <ul class="project-highlights">
-                        <li>Processed large-scale accelerometer time series data for behavioral pattern recognition</li>
-                        <li>Developed LightGBM models delivering actionable insights for mental health assessment</li>
-                        <li>Engineered temporal features capturing complex activity patterns and circadian rhythms</li>
                     </ul>
                 </div>
             </div>
